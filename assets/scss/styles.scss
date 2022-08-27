@@ -1,15 +1,21 @@
 /*---------------
     Variables
 ----------------*/
-$brand-primary: #EF3F61;
-$brand-primary-dark: darken($brand-primary, 10%);
-$brand-primary-light: lighten($brand-primary, 10%);
 
-$brand-secondary: #000;
-$brand-secondary-dark: darken($brand-secondary, 10%);
-$brand-secondary-light: lighten($brand-secondary, 10%);
+    // $brand-primary: #EF3F61;
+    $brand-primary: #D36B00;
+    $brand-primary-dark: darken($brand-primary, 10%);
+    $brand-primary-light: lighten($brand-primary, 10%);
 
-$border-radius-base: 2px;
+    // $brand-secondary: #000;  
+    $brand-secondary: #F1EFDC;
+    $brand-secondary-dark: darken($brand-secondary, 10%);
+    $brand-secondary-light: lighten($brand-secondary, 10%);
+
+    // $text-color: #fff;
+    $text-color: #000;
+    
+    $border-radius-base: 2px;
 
 /*---------------
      Imports
@@ -28,7 +34,17 @@ body {
 
 p {
     margin-bottom: 0!important;
-    color: #fff;
+    color: $text-color!important;
+}
+
+ul {
+    margin: 0!important;
+    padding: 0!important;
+    list-style: none;
+}
+
+i {
+    color: $brand-primary;
 }
 
 a {
@@ -48,6 +64,22 @@ a {
     padding: 20px;
 }
 .portfolio {
+    &-title {
+        position: relative;
+        font-size: 25px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            height: 2px;
+            width: 60px;
+            background-color: $brand-primary;
+            border-radius: $border-radius-base;
+        }
+    }
+
     &-card {
         margin-top: 10px;
         padding: 20px;
@@ -60,6 +92,7 @@ a {
             justify-content: center;
             align-items: center;
             flex-direction: column;
+
             &-media {
                 width: 200px;
                 height: 200px;
@@ -116,7 +149,6 @@ a {
 
                                 i {
                                     color: $brand-secondary;
-
                                 }
                             }
                         }
@@ -127,6 +159,94 @@ a {
                     background-color: $brand-primary-light; 
                 }
             }
+        }
+
+        &-references {
+            &-list {
+                margin-top: 5px!important;
+
+                p {
+                    margin-top: 7px;
+                    font-size: 13px;
+                    display: flex;justify-content: space-between;
+
+                    a {
+                        padding: 3px;
+                        background-color: $brand-secondary-dark;
+                        border-radius: $border-radius-base;
+
+                        &:hover, &:focus, &:active {
+                            background-color: $brand-primary-dark;
+                            color: #fff!important;
+                        }
+                    }  
+                }
+            }
+        }
+
+        &-languages {
+            &-list {
+
+                margin-top: 5px!important;
+
+                p {
+                    font-size: 13px;
+
+                    small {
+                        font-style: italic;
+                    }
+                }
+            }
+        }
+
+        &-cv {
+            p {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                a {
+                    padding: 10px;
+                    display: flex; justify-content: center; align-items: center;
+                    background-color: $brand-secondary-dark;
+                    border-radius: $border-radius-base;
+                    transition: .4s; 
+
+                    &:hover, &:focus, &:active {
+                        background-color: $brand-primary-dark;
+                        color: $brand-secondary;
+
+                        i {
+                            color: $brand-secondary;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-experience {
+            &-list {
+                margin-top: 15px!important;
+                padding: 0;
+                list-style: none;
+    
+                li {
+                    p {
+                        small {
+                            margin-left: 20px;
+                            font-style: italic;
+                        }
+                        i {
+                            font-size: 15px;
+                            &.ri-map-pin-3-fill {
+                                &.flip {
+                                    transform: rotate(-90deg);
+                                }
+                            }
+                        }
+                    }
+                }
+            }    
         }
     }
 
@@ -140,10 +260,12 @@ a {
         border-radius: $border-radius-base;
         box-shadow: 10px 10px 5px -10px $brand-secondary-light;
 
+        cursor: pointer;
         transition: .4s;
 
         i {
             font-size: 20px;
+            color: $brand-primary;
         }
 
         &:hover, &:focus, &:active {

@@ -12,10 +12,10 @@
     <link href="assets/fonts/remixicon.css" rel="stylesheet">
 
 </head>
-<body>
+<body class="dark">
     <div class="container">
         <div class="row">
-          <div class="col-sm-12 col-md-3">
+          <div class="col-sm-12 col-md-5 col-lg-3">
             <div class="portfolio-card portfolio-card-user">
               <div class="portfolio-card-user-media"></div>
               <div class="portfolio-card-user-content">
@@ -38,20 +38,49 @@
                 </ul>
               </div>
             </div>
-            <div class="portfolio-card"></div>
-            <div class="portfolio-card"></div>
-            <div class="portfolio-card"></div>
 
+            <div class="portfolio-card portfolio-card-languages">
+              <p>Idiomas</p>
+
+              <ul class="portfolio-card-languages-list">
+                <li><p>Español <small>(Nativo)</small></p></li>
+                <li><p>Portugués <small>(Nativo)</small></p></li>
+                <li><p>Ingles <small>(Medio)</small></p></li>
+              </ul>
+            </div>
+
+            <div class="portfolio-card portfolio-card-references">
+              <p>Referencias</p>
+
+              <ul class="portfolio-card-references-list">
+                <li><p>Matias Olivera <span><a href="tel:000">Contacto</a></span></p></li>
+                <li><p>Mateo Capdevielle <span><a href="tel:000">Contacto</a></span></p></li>
+              </ul>
+            </div>
+
+            <div class="portfolio-card portfolio-card-cv">
+              <p>Curriculum Vitae: <a href="assets/uploads/cv.pdf" download="CV Santiago Olivera"><i class="ri-download-2-line ri-xl"></i></a></p>
+            </div>
           </div>
-          <div class="col-sm-12 col-md-9">
-            <div class="portfolio-card"></div>
+          <div class="col-sm-12 col-md-7 col-lg-9">
+            <div class="portfolio-card portfolio-card-experience">
+              <p class="portfolio-title">Experiencia</p>
+
+                <ul class="portfolio-card-experience-list">
+                  <li><p><i class="ri-map-pin-3-fill"></i> 2018</p></li>
+                  <li><p><small>ClicRural : Desarrollo Frontend</span></p></li>
+                  <li><p><i class="ri-map-pin-3-fill flip"></i> <span id="year"></span> (Actualidad)</p></li>
+                </ul>
+            </div>
             <div class="portfolio-card"></div>
             <div class="portfolio-card"></div>
           </div>
         </div>
       </div>
 
-      <a href="#" class="portfolio-change"><i class="ri-sun-line"></i></a>
+      <div id="portfolio-change" class="portfolio-change portfolio-change-dark"><i class="ri-sun-line"></i></div>
+
+      <script type="text/javascript" src="assets/js/jquery.js"></script>
       <script type="text/javascript" src="assets/js/main.js"></script>
       <script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
