@@ -1,0 +1,119 @@
+/*---------------
+    Variables
+----------------*/
+$brand-primary: #EF3F61;
+$brand-primary-dark: darken($brand-primary, 10%);
+$brand-primary-light: lighten($brand-primary, 10%);
+
+$brand-secondary: #000;
+$brand-secondary-dark: darken($brand-secondary, 10%);
+$brand-secondary-light: lighten($brand-secondary, 10%);
+
+$border-radius-base: 2px;
+
+/*---------------
+     Imports
+----------------*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap');
+
+/*---------------
+     General
+----------------*/
+body {
+    min-height: 500px;
+    background-color: $brand-secondary-light!important;
+    font-family: 'Poppins', sans-serif!important;
+
+}
+
+p {
+    margin-bottom: 0!important;
+    color: #fff;
+}
+
+a {
+    color: $brand-primary!important;
+    text-decoration: none!important;
+    transition: .4s;
+
+    &:hover, &:focus, &:active {
+        color: $brand-primary-dark;
+    }
+}
+
+/*---------------
+    Portfolio
+----------------*/
+.container {
+    padding: 20px;
+}
+.portfolio {
+    &-card {
+        margin-top: 10px;
+        padding: 20px;
+        background: lighten($brand-secondary, 5%);
+        border-radius: $border-radius-base;
+        box-shadow: 10px 10px 5px -10px $brand-secondary-light;
+
+        &-user {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            &-media {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                border: 2px solid $brand-primary;
+                background-image: url(../img/photo.jpg);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+            }
+            &-content {
+                margin-top: 10px;
+                p {
+                    span {
+                        margin-top: 0;
+                        font-size: 13px;
+                        font-style: italic;
+                    
+                    }
+                }
+                
+                &-list {
+                    margin-top: 20px;
+                    padding: 0;
+                    list-style: none;
+                    display: flex;
+                    justify-content: space-evenly;
+
+                    li {
+                        display: flex;justify-content: center;align-items: center;
+                        padding: 10px;
+                        background-color: $brand-secondary-dark;
+                        border-radius: $border-radius-base;
+                        transition: .4s;
+
+                        a {
+                            display: flex;justify-content: center;align-items: center;
+                        }
+                        &:hover, &:focus, &:active {
+                            background-color: $brand-primary-dark;
+                            
+                            a {
+                                color: $brand-secondary;
+
+
+                                i {
+                                    color: $brand-secondary;
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
