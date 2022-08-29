@@ -1,17 +1,15 @@
-//Light mode and dark mode
+//Light mode and Dark mode
 
-$(document).ready(function() {
-    $('.portfolio-change-dark').click(function(){
-        $('body').addClass('light');
-        $('body').removeClass('dark');
-    });
-    $('.portfolio-change').click(function(){
-        $('body').removeClass('light');
-        $('body').addClass('dark');
-    });
-    var anio = (new Date).getFullYear();
-    $("#fecha").text( anio );
+var btnChange = document.getElementById("portfolio-change");
+var icon = document.getElementById("portfolio-change-icon")
 
-    document.getElementById("year").innerHTML = new Date().getFullYear();
-
-});
+btnChange.onclick = function() {
+    document.body.classList.toggle('light');
+    if(document.body.classList.contains('light')) {
+        icon.classList.remove('ri-sun-line');
+        icon.classList.add('ri-moon-fill');
+    }else {
+        icon.classList.remove('ri-moon-fill');
+        icon.classList.add('ri-sun-line');
+    }
+}

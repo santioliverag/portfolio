@@ -1,40 +1,35 @@
 /*---------------
-    Variables
-----------------*/
-
-    // $brand-primary: #EF3F61;
-    $brand-primary: #D36B00;
-    $brand-primary-dark: darken($brand-primary, 10%);
-    $brand-primary-light: lighten($brand-primary, 10%);
-
-    // $brand-secondary: #000;  
-    $brand-secondary: #F1EFDC;
-    $brand-secondary-dark: darken($brand-secondary, 10%);
-    $brand-secondary-light: lighten($brand-secondary, 10%);
-
-    // $text-color: #fff;
-    $text-color: #000;
-    
-    $border-radius-base: 2px;
-
-/*---------------
      Imports
 ----------------*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap');
+@import '../scss/fonts.scss';
+@import '../scss/colors.scss';
+
+/*---------------
+    Variables
+----------------*/
+
+
+$brand-secondary: #000;  
+$brand-secondary-dark: darken($brand-secondary, 10%);
+$brand-secondary-light: lighten($brand-secondary, 10%);
+
+$text-color: #fff;
+
+$border-radius-base: 2px;
 
 /*---------------
      General
 ----------------*/
 body {
     min-height: 500px;
-    background-color: $brand-secondary-light!important;
-    font-family: 'Poppins', sans-serif!important;
-
+    background-color: var(--secondary-color)!important;
+    font-family: map-get($map: $fonts, $key: poppins)!important;
 }
 
 p {
     margin-bottom: 0!important;
-    color: $text-color!important;
+    color: var(--text-color)!important;
 }
 
 ul {
@@ -44,16 +39,16 @@ ul {
 }
 
 i {
-    color: $brand-primary;
+    color: var(--primary-color);
 }
 
 a {
-    color: $brand-primary!important;
+    color: var(--primary-color)!important;
     text-decoration: none!important;
     transition: .4s;
 
     &:hover, &:focus, &:active {
-        color: $brand-primary-dark;
+        color: var(--primary-color-dark);
     }
 }
 
@@ -75,7 +70,7 @@ a {
             bottom: -3px;
             height: 2px;
             width: 60px;
-            background-color: $brand-primary;
+            background-color: var(--primary-color);
             border-radius: $border-radius-base;
         }
     }
@@ -83,9 +78,9 @@ a {
     &-card {
         margin-top: 10px;
         padding: 20px;
-        background: lighten($brand-secondary, 5%);
+        background: var(--secondary-color-dark);
         border-radius: $border-radius-base;
-        box-shadow: 10px 10px 5px -10px $brand-secondary-light;
+        box-shadow: 10px 10px 5px -10px var(--secondary-color);
 
         &-user {
             display: flex;
@@ -97,8 +92,8 @@ a {
                 width: 200px;
                 height: 200px;
                 border-radius: 50%;
-                border: 2px solid $brand-primary;
-                background-color: $brand-secondary;
+                border: 2px solid var(--primary-color);
+                background-color: var(--secondary-color);
                 background-image: url(../img/photo.png);
                 background-repeat: no-repeat;
                 background-position: center;
@@ -116,7 +111,7 @@ a {
 
                     i {
                         font-size: 12px;
-                        color: $brand-primary;
+                        color: var(--primary-color);
                     }
 
                     small {
@@ -134,7 +129,7 @@ a {
                     li {
                         display: flex;justify-content: center;align-items: center;
                         padding: 10px;
-                        background-color: $brand-secondary-dark;
+                        background-color: var(--secondary-color-darker);
                         border-radius: $border-radius-base;
                         transition: .4s;
 
@@ -142,14 +137,14 @@ a {
                             display: flex;justify-content: center;align-items: center;
                         }
                         &:hover, &:focus, &:active {
-                            background-color: $brand-primary-dark;
+                            background-color: var(--primary-color-dark);
                             
                             a {
-                                color: $brand-secondary;
+                                color: var(--secondary-color-dark);
 
 
                                 i {
-                                    color: $brand-secondary;
+                                    color: var(--secondary-color-dark);
                                 }
                             }
                         }
@@ -157,7 +152,7 @@ a {
                 }
 
                 hr {
-                    background-color: $brand-primary-light; 
+                    background-color: var(--primary-color-light); 
                 }
             }
         }
@@ -169,15 +164,15 @@ a {
                 p {
                     margin-top: 7px;
                     font-size: 13px;
-                    display: flex;justify-content: space-between;
+                    display: flex;justify-content: space-between;align-items: center;
 
                     a {
-                        padding: 3px;
-                        background-color: $brand-secondary-dark;
+                        padding: 5px 7px;
+                        background-color: var(--secondary-color-darker);
                         border-radius: $border-radius-base;
 
                         &:hover, &:focus, &:active {
-                            background-color: $brand-primary-dark;
+                            background-color: var(--primary-color-dark);
                             color: #fff!important;
                         }
                     }  
@@ -209,16 +204,16 @@ a {
                 a {
                     padding: 10px;
                     display: flex; justify-content: center; align-items: center;
-                    background-color: $brand-secondary-dark;
+                    background-color: var(--secondary-color-darker);
                     border-radius: $border-radius-base;
                     transition: .4s; 
 
                     &:hover, &:focus, &:active {
-                        background-color: $brand-primary-dark;
-                        color: $brand-secondary;
+                        background-color: var(--primary-color-dark);
+                        color: var(--secondary-color-dark);
 
                         i {
-                            color: $brand-secondary;
+                            color: var(--secondary-color-dark);
                         }
                     }
                 }
@@ -249,6 +244,15 @@ a {
                 }
             }    
         }
+
+        &-resume {
+            p {
+                &:not(.portfolio-title) {
+                    margin-top: 10px;
+                    white-space: preline;
+                }
+            }
+        }
     }
 
     &-change {
@@ -257,20 +261,19 @@ a {
         bottom: 10px;
         right: 10px;
 
-        background: lighten($brand-secondary, 5%);
+        background: var(--secondary-color-dark);
         border-radius: $border-radius-base;
-        box-shadow: 10px 10px 5px -10px $brand-secondary-light;
 
         cursor: pointer;
         transition: .4s;
 
         i {
             font-size: 20px;
-            color: $brand-primary;
+            color: var(--primary-color);
         }
 
         &:hover, &:focus, &:active {
-            background: lighten($brand-secondary, 1%);
+            background: var(--secondary-color-darker);
 
         }
     }
