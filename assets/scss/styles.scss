@@ -108,6 +108,14 @@ a {
 
                     small {
                         font-size: .8em;
+
+                        a {
+                            color: var(--text-color)!important;
+
+                            &:hover, &:focus, &:active {
+                                color: var(--primary-color)!important;
+                            }
+                        }
                     }
                 }
                 
@@ -220,17 +228,14 @@ a {
     
                 li {
                     p {
-                        small {
-                            margin-left: 20px;
-                            font-style: italic;
-                        }
                         i {
                             font-size: 15px;
-                            &.ri-map-pin-3-fill {
-                                &.flip {
-                                    transform: rotate(-90deg);
-                                }
-                            }
+                        }
+                        span {
+                            display: block;
+                            margin-left: 20px;
+                            font-style: italic;
+                            font-size: 80%;
                         }
                     }
                 }
@@ -244,6 +249,37 @@ a {
                     white-space: preline;
                 }
             }
+        }
+
+        &-education {
+            &-list {
+                margin-top: 15px!important;
+                padding: 0;
+                list-style: none;
+    
+                li {
+                    margin-top: 10px;
+                    
+                    p {
+                        i {
+                            font-size: 15px;
+                        }
+                        span {
+                            display: block;
+                            margin-left: 20px;
+                            font-style: italic;
+                            font-size: 80%;
+
+                            small {
+                                padding: 1px 2px;
+                                border-radius: $border-radius-base;
+                                background-color: var(--primary-color)!important;
+                                color: var(--text-color-invert);
+                            }
+                        }
+                    }
+                }
+            }    
         }
     }
 
